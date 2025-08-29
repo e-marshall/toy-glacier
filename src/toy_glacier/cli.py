@@ -8,23 +8,23 @@ def main():
     pass
 
 
-@main.command("create-glacier")
-@click.option(
-    "--name", default="myglacier", help="Assign a name to the glacier being created."
-)
-@click.option(
-    "--glacier-mass",
-    default=100,
-    help="NOT using for now. Assign a quantity to represent mass of glacier",
-)
+#@main.command("create-glacier")
+#@click.option(
+#    "--name", default="myglacier", help="Assign a name to the glacier being created."
+#)
+#@click.option(
+#    "--glacier-mass",
+#    default=100,
+#    help="NOT using for now. Assign a quantity to represent mass of glacier",
+#)
 # this is kind of redundant w/ fn in domain.py, not sure where to put/how to
 # split this logic
-def create_glacier(name: str, glacier_mass: int):
-    glacier = make_glacier(name=name, glacier_mass=glacier_mass)
-    text = click.wrap_text(
-        f"Created a glacier, {name}, with mass {glacier.mass} (kg m^-3)."
-    )
-    click.echo(text)
+#def create_glacier(name: str, glacier_mass: int):
+#    glacier = make_glacier(name=name, glacier_mass=glacier_mass)
+#    text = click.wrap_text(
+#        f"Created a glacier, {name}, with mass {glacier.mass} (kg m^-3)."
+#    )
+#    click.echo(text)
 
 
 # @main.command('remove-glacier')

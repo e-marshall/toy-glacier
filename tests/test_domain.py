@@ -1,6 +1,12 @@
 from toy_glacier import domain
 
 
+def test_make_glacier():
+    glacier = domain.make_glacier(name="testName", glacier_mass=500)
+    assert glacier.name == "testName"
+    assert glacier.mass == 500
+
+
 def test_accumulate():
     glacier = domain.Glacier(name="test1", mass=100)
     glacier.accumulate(20)
