@@ -1,7 +1,6 @@
 from toy_glacier import cli
 
 
-
 def test_accumulation_event():
     glacier = cli.make_glacier(name="name", glacier_mass=100)
     glacier.accumulate(accum_amount=50)
