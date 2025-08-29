@@ -13,3 +13,9 @@ def test_ablate():
     glacier.ablate(50)
 
     assert glacier.mass == 50
+
+
+def test_can_ablate():
+    glacier = domain.Glacier(name="..", mass=10)
+    assert not glacier.can_ablate(20)
+    assert glacier.can_ablate(5)
