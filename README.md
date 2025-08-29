@@ -1,3 +1,3 @@
-#toy-glacier
+# toy-glacier
 
 A toy CLI tool 
