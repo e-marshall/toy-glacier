@@ -26,10 +26,10 @@ jobs:
       - name: Build wheel
         run: uv build
 
-      - name: Publish package (test)
-        if: startsWith(github.ref_name, 'test')
+      - name: Publish package 
+        if: startsWith(github.ref_name, 'v')
         run: uv publish --trusted-publishing always
     
-      - name: Publish package
-        if: startsWith(github.ref_name, 'v')
+      - name: Publish package (test)
+        if: startsWith(github.ref_name, 'test')
         run: uv publish --publish-url https://test.pypi.org/legacy/
