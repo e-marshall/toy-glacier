@@ -32,7 +32,7 @@ jobs:
         run: uv publish --trusted-publishing always
 
   publish-testpypi:
-    if: startsWith(github.ref_name, 'test-')
+    if: startsWith(github.ref_name, 'test')
     name: Publish to TestPyPI
     runs-on: ubuntu-latest
     environment: testpypi
