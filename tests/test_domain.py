@@ -1,4 +1,5 @@
 from toy_glacier import domain
+import pytest
 
 
 def test_make_glacier():
@@ -19,6 +20,12 @@ def test_ablate():
     glacier.ablate(50)
 
     assert glacier.mass == 50
+
+
+def test_ablate_not_possible():
+    with pytest.raises(ValueError):
+        glacier = domain.Glacier(name="test", mass=50)
+        glacier.ablate(75)
 
 
 def test_can_ablate():
