@@ -5,6 +5,7 @@ from toy_glacier.domain import make_glacier
 
 @click.group()
 def main():
+    """A command group"""
     pass
 
 
@@ -54,6 +55,7 @@ def accumulation_event(
     name: str,
     glacier_mass: int,
 ):
+    """This function creates a glacier and instigates an accumulation event with a specified quantity."""
     glacier = make_glacier(name=name, glacier_mass=glacier_mass)
     create_text = click.wrap_text(
         f"Glacier created with name: {name}, initial mass: {glacier_mass} (kg/m3)."
@@ -78,6 +80,7 @@ def accumulation_event(
     help="Initial mass of a glacier created in this call.",
 )
 def ablation_event(amount: int, name: str, glacier_mass: int):
+    """This function creates a glacier and instigates an ablation event with a specified quantitiy."""
     glacier = make_glacier(name=name, glacier_mass=glacier_mass)
     create_text = click.wrap_text(
         f"Glacier created with name: {name}, initial mass: {glacier_mass} (kg/m3)."

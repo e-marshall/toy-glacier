@@ -33,7 +33,7 @@ class Glacier:
 
     # def ablate(self, ablate_amount:AblationEvent):
     def ablate(self, ablate_amount: int):
-        """Function to simulate ablation. Decreases mass by specified amount."""
+        """Function to simulate ablation. Decreases mass by specified amount. First calls .can_ablate() to check that the glacier can lose the specified amount without mass going negative or to zero."""
         if self.can_ablate(ablate_amount):
             self.mass -= ablate_amount  # .qtz
         else:
