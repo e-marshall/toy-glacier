@@ -1,6 +1,6 @@
 [project]
 name = "toy-glacier"
-version = "0.1.0"
+version = "0.1.1"
 description = "This is a toy CLI tool that allows a user to create a 'glacier' and then mimic accumulation & ablation by adding and subtracting mass from it via terminal commands."
 readme = "README.md"
 authors = [
