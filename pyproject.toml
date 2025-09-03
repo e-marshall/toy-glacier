@@ -1,7 +1,7 @@
 [project]
 name = "toy-glacier"
 version = "0.1.0"
-description = "Add your description here"
+description = "This is a toy cli tool that allows a user to create a 'glacier' and then add and subtract mass from it via terminal commands."
 readme = "README.md"
 authors = [
     { name = "Emma Marshall", email = "emarshall@rhg.com" }
