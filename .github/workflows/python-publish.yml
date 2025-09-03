@@ -7,7 +7,8 @@ on:
       - 'test-*' # test release, publish to TestPyPI
 
 jobs:
-  release:
+  publish-pypi:
+    if: startsWith(github.ref_name, 'v')
     name: Publish to PyPI
     runs-on: ubuntu-latest
     environment: pypi
@@ -26,10 +27,30 @@ jobs:
       - name: Build wheel
         run: uv build
 
-      - name: Publish package 
+      - name: Publish package (PyPI)
         if: startsWith(github.ref_name, 'v')
         run: uv publish --trusted-publishing always
-    
-      - name: Publish package (test)
+
+  publish-testpypi:
+    if: startsWith(github.ref_name, 'test-')
+    name: Publish to TestPyPI
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+        contents: read
+        id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv and setup the python version
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install the project
+        run: uv sync --all-groups
+
+      - name: Build wheel
+        run: uv build
+
+      - name: Publish package (TestPyPI, OIDC)
         if: startsWith(github.ref_name, 'test')
         run: uv publish --publish-url https://test.pypi.org/legacy/
