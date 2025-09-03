@@ -24,3 +24,9 @@ dev = [
     "pytest-cov>=6.2.1",
     "ruff>=0.12.11",
 ]
+
+#[[tool.uv.index]]
+#name = "testpypi"
+#url = "https://test.pypi.org/toy-glacier"
+#publish-url = "https://test.pypi.org/legacy/"
+#explicity = true

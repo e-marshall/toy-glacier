@@ -3,7 +3,8 @@ name: Publish to PyPI
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*' # real release, publishes to PyPI
+      - 'test-*' # test release, publishes to TestPyPI
 
 jobs:
   release:
@@ -11,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
+      contents: read
       id-token: write
     steps:
       - uses: actions/checkout@v4
@@ -24,5 +26,10 @@ jobs:
       - name: Build wheel
         run: uv build
 
+      - name: Publish package (test)
+        if: startsWith(github.ref_name, 'test')
+        run: uv publish --trusted-publishing always
+    
       - name: Publish package
-        run: uv publish
+        if: startsWith(github.ref_name, 'v')
+        run: uv publish --publish-url https://test.pypi.org/legacy/
