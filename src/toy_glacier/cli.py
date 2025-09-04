@@ -46,7 +46,7 @@ def accumulation_event(
     glacier_volume : int
         The initial volume of the glacier (m3).
     """
-    glacier = make_glacier(name=name, glacier_volume=glacier_volume)
+    glacier = make_glacier(name=name, volume=glacier_volume)
     create_text = click.wrap_text(
         f"Glacier created with name: {name}, initial volume: {glacier_volume} (m3)."
     )

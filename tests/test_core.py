@@ -3,7 +3,7 @@ import pytest
 
 
 def test_make_glacier():
-    glacier = core.make_glacier(name="testName", glacier_volume=500)
+    glacier = core.make_glacier(name="testName", volume=500)
     assert glacier.name == "testName"
     assert glacier.volume == 500
 
