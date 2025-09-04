@@ -40,21 +40,21 @@ def accumulation_event(
     Parameters
     ----------
     amount : int
-        The volume to add to the glacier (m3).
+        The volume to add to the glacier.
     name : str
         The name assigned to the glacier.
     glacier_volume : int
-        The initial volume of the glacier (m3).
+        The initial volume of the glacier.
     """
     glacier = make_glacier(name=name, volume=glacier_volume)
     create_text = click.wrap_text(
-        f"Glacier created with name: {name}, initial volume: {glacier_volume} (m3)."
+        f"Glacier created with name: {name}, initial volume: {glacier_volume}."
     )
     click.echo(create_text)
 
     glacier.accumulate(accum_amount=amount)
     accum_text = click.wrap_text(
-        f"Accumulation event: Volume is now {glacier.volume} (m3)."
+        f"Accumulation event: Volume is now {glacier.volume}."
     )
     click.echo(accum_text)
 
@@ -79,20 +79,20 @@ def ablation_event(amount: int, name: str, glacier_volume: int):
     Parameters
     ----------
     amount : int
-        The volume to remove from the glacier (m3).
+        The volume to remove from the glacier.
     name : str
         The name assigned to the glacier.
     glacier_volume : int
-        The initial volume of the glacier (m3).
+        The initial volume of the glacier.
     """
     glacier = make_glacier(name=name, volume=glacier_volume)
     create_text = click.wrap_text(
-        f"Glacier created with name: {name}, initial volume: {glacier_volume} (m3)."
+        f"Glacier created with name: {name}, initial volume: {glacier_volume}."
     )
     click.echo(create_text)
 
     glacier.ablate(ablate_amount=amount)
     ablate_text = click.wrap_text(
-        f"Ablation event: Volume is now {glacier.volume} (m3)"
+        f"Ablation event: Volume is now {glacier.volume}."
     )
     click.echo(ablate_text)
