@@ -1,17 +1,32 @@
-# Welcome to MkDocs
+# Welcome to toy-glacier
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This is a very small toy CLI tool.
 
 ## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+* `accumulation-event` - Create a glacier and trigger an accumulation event with a specified amount. 
+* `ablation-event` - Create a glacier and trigger an ablation event with a specified amount. 
 
-## Project layout
+## Example
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Call either command and pass an `amount` argument:
+
+```
+toy-glacier accumulation-event 45
+```
+Returns:
+```
+Glacier created with name: defaultName, initial volume: 100 m3.
+Accumulation event: Total volume is now 145 m3.
+```
+
+By default, each command creates a glacier with a volume of 100 m3 and the name, 'defaultName'. To modify either of these default arguments, pass them as optional args:
+
+```
+toy-glacier ablation-event 15 --glacier-volume 50 -- name MyFirstGlacier
+```
+Returns:
+```
+Glacier created with name: MyFirstGlacier, initial volume: 50 m3.
+Ablation event: Volume is now 35 m3.
+```
