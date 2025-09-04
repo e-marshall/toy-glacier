@@ -61,7 +61,7 @@ class Glacier:
             raise ValueError("Glacier has disappeared, no more mass to lose.")
 
 
-def make_glacier(name: str, glacier_volume: int):
+def make_glacier(name: str, volume: int):
     """
     Create a Glacier object.
 
@@ -77,5 +77,5 @@ def make_glacier(name: str, glacier_volume: int):
     Glacier
         A new Glacier object with the specified name and volume.
     """
-    glacier = Glacier(name=name, volume=glacier_volume)
+    glacier = Glacier(name=name, volume=volume)
     return glacier
