@@ -9,8 +9,9 @@ def main():
     Entry point for the toy_glacier CLI application.
 
     This function serves as the main Click group for all glacier-related commands.
-    """    
+    """
     pass
+
 
 @main.command("accumulation-event")
 @click.argument(
@@ -21,7 +22,9 @@ def main():
     "--name", default="defaultName", help="Name of the glacier created in this call."
 )
 @click.option(
-    "--glacier-volume", default=100, help="Initial volume of glacier created in this call."
+    "--glacier-volume",
+    default=100,
+    help="Initial volume of glacier created in this call.",
 )
 def accumulation_event(
     amount: int,
@@ -42,7 +45,7 @@ def accumulation_event(
         The name assigned to the glacier.
     glacier_volume : int
         The initial volume of the glacier (m3).
-    """    
+    """
     glacier = make_glacier(name=name, glacier_volume=glacier_volume)
     create_text = click.wrap_text(
         f"Glacier created with name: {name}, initial volume: {glacier_volume} (m3)."
@@ -81,7 +84,7 @@ def ablation_event(amount: int, name: str, glacier_volume: int):
         The name assigned to the glacier.
     glacier_volume : int
         The initial volume of the glacier (m3).
-    """    
+    """
     glacier = make_glacier(name=name, volume=glacier_volume)
     create_text = click.wrap_text(
         f"Glacier created with name: {name}, initial volume: {glacier_volume} (m3)."
@@ -89,5 +92,7 @@ def ablation_event(amount: int, name: str, glacier_volume: int):
     click.echo(create_text)
 
     glacier.ablate(ablate_amount=amount)
-    ablate_text = click.wrap_text(f"Ablation event: Volume is now {glacier.volume} (m3)")
+    ablate_text = click.wrap_text(
+        f"Ablation event: Volume is now {glacier.volume} (m3)"
+    )
     click.echo(ablate_text)

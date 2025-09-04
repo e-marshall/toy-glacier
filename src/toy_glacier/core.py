@@ -9,6 +9,7 @@ class Glacier:
     volume : int
         The initial volume of the glacier.
     """
+
     def __init__(self, name: str, volume: int):
         self.name = name
         self.volume = volume
@@ -26,7 +27,7 @@ class Glacier:
         -------
         bool
             True if the glacier can lose the specified volume, False otherwise.
-        """        
+        """
         return self.volume >= ablate_amount  # .qty
 
     def accumulate(self, accum_amount: int):
@@ -37,8 +38,8 @@ class Glacier:
         ----------
         accum_amount : int
             The volume to add to the glacier.
-        """       
-        self.volume += accum_amount 
+        """
+        self.volume += accum_amount
 
     def ablate(self, ablate_amount: int):
         """
@@ -53,7 +54,7 @@ class Glacier:
         ------
         ValueError
             If the glacier does not have enough volume to ablate the specified amount.
-        """       
+        """
         if self.can_ablate(ablate_amount):
             self.volume -= ablate_amount  # .qtz
         else:
@@ -75,7 +76,6 @@ def make_glacier(name: str, glacier_volume: int):
     -------
     Glacier
         A new Glacier object with the specified name and volume.
-    """   
+    """
     glacier = Glacier(name=name, volume=glacier_volume)
     return glacier
-   
