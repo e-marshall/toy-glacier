@@ -1,38 +1,42 @@
 site_name: Documentation for `toy-glacier`
-site_url: https://sitename.example
+site_url: https://e-marshall.github.io/toy-glacier
 theme:
+  name: material
   features:
     - navigation.footer
+    - navigation.tabs
+    - toc.follow
+    - toc.integrate
   font:
-    text: Merriweather Sans
+    text: Work Sans
     code: Red Hat Mono
   icon:
-    logo: fontawesome/solid/icicles
+    logo: material/watering-can
+  favicon: assets/favicon.ico
 
-  name: material
   palette:
     # Dark Mode
     - scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Dark mode
-      primary: green
-      accent: deep purple
+      primary: indigo
+      accent: lime
 
     # Light Mode
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Light mode
-      primary: blue
-      accent: deep orange
+      primary: indigo
+      accent: teal
 
 nav: 
   - Home: index.md
   - Installation: installation.md
-  - Reference: 
-      - CLI: cli-reference.md
-      - API: core-reference.md
+  - Reference:
+    - CLI: cli-reference.md
+    - API: core-reference.md
 plugins:
   - search:
   - mkdocstrings:

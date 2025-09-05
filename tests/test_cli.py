@@ -1,5 +1,5 @@
 from click.testing import CliRunner
-import click
+import rich_click as click
 from toy_glacier.cli import accumulation_event, make_glacier, ablation_event
 
 

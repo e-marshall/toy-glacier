@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "click>=8.2.1",
+    "rich-click>=1.8.9",
 ]
 
 [project.scripts]
