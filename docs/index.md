@@ -1,4 +1,4 @@
-# Welcome to toy-glacier
+# Welcome to toy-glacier-project
 
 This is a very small toy CLI tool.
 
