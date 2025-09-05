@@ -53,9 +53,7 @@ def accumulation_event(
     click.echo(create_text)
 
     glacier.accumulate(accum_amount=amount)
-    accum_text = click.wrap_text(
-        f"Accumulation event: Mass is now {glacier.mass}."
-        )
+    accum_text = click.wrap_text(f"Accumulation event: Mass is now {glacier.mass}.")
     click.echo(accum_text)
 
 
@@ -92,7 +90,5 @@ def ablation_event(amount: int, name: str, glacier_mass: int):
     click.echo(create_text)
 
     glacier.ablate(ablate_amount=amount)
-    ablate_text = click.wrap_text(
-        f"Ablation event: Mass is now {glacier.mass}."
-        )
+    ablate_text = click.wrap_text(f"Ablation event: Mass is now {glacier.mass}.")
     click.echo(ablate_text)
