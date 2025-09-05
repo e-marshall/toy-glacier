@@ -1,5 +1,5 @@
-site_name: Documentation for `toy-glacier`
-site_url: https://e-marshall.github.io/toy-glacier
+site_name: Documentation for `toy-glacier-project`
+site_url: https://e-marshall.github.io/toy-glacier-project
 theme:
   name: material
   features:

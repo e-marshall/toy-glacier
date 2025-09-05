@@ -1,12 +1,12 @@
 import rich_click as click
 
-from toy_glacier.core import make_glacier
+from toy_glacier_project.core import make_glacier
 
 
 @click.group()
 def main():
     """
-    Entry point for the toy_glacier CLI application.
+    Entry point for the toy_glacier_project CLI application.
 
     This function serves as the main Click group for all glacier-related commands.
     """

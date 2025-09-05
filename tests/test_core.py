@@ -1,4 +1,4 @@
-from toy_glacier import core
+from toy_glacier_project import core
 import pytest
 
 

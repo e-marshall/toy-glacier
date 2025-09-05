@@ -41,7 +41,7 @@ jobs:
 
       - name: Test with pytest
         run: |
-          uv run pytest -vv --cov-report term-missing --cov-report xml --cov toy_glacier
+          uv run pytest -vv --cov-report term-missing --cov-report xml --cov toy_glacier_project
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
