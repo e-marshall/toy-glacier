@@ -21,9 +21,9 @@ def test_accumulation_event():
 
 
 def test_accumulation_event_amt():
-    glacier = make_glacier(name="name", volume=100)
+    glacier = make_glacier(name="name", mass=100)
     glacier.accumulate(accum_amount=50)
-    assert glacier.volume == 150
+    assert glacier.mass == 150
 
 
 def test_ablation_event():
@@ -44,6 +44,6 @@ def test_ablation_event():
 
 
 def test_ablation_event_amt():
-    glacier = make_glacier(name="name", volume=100)
+    glacier = make_glacier(name="name", mass=100)
     glacier.ablate(ablate_amount=50)
-    assert glacier.volume == 50
+    assert glacier.mass == 50

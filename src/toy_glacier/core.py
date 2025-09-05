@@ -1,67 +1,67 @@
 class Glacier:
     """
-    A class representing a glacier with a name and volume.
+    A class representing a glacier with a name and mass.
 
     Parameters
     ----------
     name : str
         The name of the glacier.
-    volume : int
-        The initial volume of the glacier.
+    mass : int
+        The initial mass of the glacier.
     """
 
-    def __init__(self, name: str, volume: int):
+    def __init__(self, name: str, mass: int):
         self.name = name
-        self.volume = volume
+        self.mass = mass
 
     def can_ablate(self, ablate_amount: int) -> bool:
         """
-        Check if the glacier can lose the specified volume without going negative or to zero.
+        Check if the glacier can lose the specified mass without going negative or to zero.
 
         Parameters
         ----------
         ablate_amount : int
-            The amount of volume to potentially ablate.
+            The amount of mass to potentially ablate.
 
         Returns
         -------
         bool
-            True if the glacier can lose the specified volume, False otherwise.
+            True if the glacier can lose the specified mass, False otherwise.
         """
-        return self.volume >= ablate_amount  # .qty
+        return self.mass >= ablate_amount  # .qty
 
     def accumulate(self, accum_amount: int):
         """
-        Simulate accumulation by increasing the glacier's volume.
+        Simulate accumulation by increasing the glacier's mass.
 
         Parameters
         ----------
         accum_amount : int
-            The volume to add to the glacier.
+            The mass to add to the glacier.
         """
-        self.volume += accum_amount
+        self.mass += accum_amount
 
     def ablate(self, ablate_amount: int):
         """
-        Simulate ablation by decreasing the glacier's volume.
+        Simulate ablation by decreasing the glacier's mass.
 
         Parameters
         ----------
         ablate_amount : int
-            The amount of volume to remove from the glacier.
+            The amount of mass to remove from the glacier.
 
         Raises
         ------
         ValueError
-            If the glacier does not have enough volume to ablate the specified amount.
+            If the glacier does not have enough mass to ablate the specified amount.
         """
         if self.can_ablate(ablate_amount):
-            self.volume -= ablate_amount  # .qtz
+            self.mass -= ablate_amount  # .qtz
         else:
             raise ValueError("Glacier has disappeared, no more mass to lose.")
 
 
-def make_glacier(name: str, volume: int):
+def make_glacier(name: str, mass: int):
     """
     Create a Glacier object.
 
@@ -69,13 +69,13 @@ def make_glacier(name: str, volume: int):
     ----------
     name : str
         The name of the glacier.
-    glacier_volume : int
-        The initial volume of the glacier.
+    mass : int
+        The initial mass of the glacier.
 
     Returns
     -------
     Glacier
-        A new Glacier object with the specified name and volume.
+        A new Glacier object with the specified name and mass.
     """
-    glacier = Glacier(name=name, volume=volume)
+    glacier = Glacier(name=name, mass=mass)
     return glacier

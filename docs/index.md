@@ -16,17 +16,17 @@ toy-glacier accumulation-event 45
 ```
 Returns:
 ```
-Glacier created with name: defaultName, initial volume: 100 m3.
-Accumulation event: Total volume is now 145 m3.
+Glacier created with name: defaultName, initial mass: 100 kg.
+Accumulation event: Total mass is now 145 kg.
 ```
 
-By default, each command creates a glacier with a volume of 100 m3 and the name, 'defaultName'. To modify either of these default arguments, pass them as optional args:
+By default, each command creates a glacier with a mass of 100 kg and the name, 'defaultName'. To modify either of these default arguments, pass them as optional args:
 
 ```
-toy-glacier ablation-event 15 --glacier-volume 50 -- name MyFirstGlacier
+toy-glacier ablation-event 15 --glacier-mass 50 -- name MyFirstGlacier
 ```
 Returns:
 ```
-Glacier created with name: MyFirstGlacier, initial volume: 50 m3.
-Ablation event: Volume is now 35 m3.
+Glacier created with name: MyFirstGlacier, initial mass: 50 kg.
+Ablation event: Mass is now 35 kg.
 ```
