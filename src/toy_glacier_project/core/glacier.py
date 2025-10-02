@@ -1,3 +1,9 @@
+from dataclasses import dataclass, field
+from uuid import UUID, uuid4
+from datetime import datetime
+
+
+
 class Glacier:
     """
     A class representing a glacier with a name and mass.
@@ -10,9 +16,11 @@ class Glacier:
         The initial mass of the glacier.
     """
 
-    def __init__(self, name: str, mass: int):
+    def __init__(self, name: str, mass: int, id: UUID = None):
         self.name = name
         self.mass = mass
+        self.id = id if id is not None else uuid4()
+        self.version:int = 0
 
     def can_ablate(self, ablate_amount: int) -> bool:
         """
@@ -40,6 +48,7 @@ class Glacier:
             The mass to add to the glacier.
         """
         self.mass += accum_amount
+        self.version += 1
 
     def ablate(self, ablate_amount: int):
         """
@@ -57,6 +66,7 @@ class Glacier:
         """
         if self.can_ablate(ablate_amount):
             self.mass -= ablate_amount  # .qtz
+            self.version += 1
         else:
             raise ValueError("Glacier has disappeared, no more mass to lose.")
 
@@ -77,5 +87,5 @@ def make_glacier(name: str, mass: int):
     Glacier
         A new Glacier object with the specified name and mass.
     """
-    glacier = Glacier(name=name, mass=mass)
+    glacier = Glacier(name=name, mass=mass, id=uuid4())
     return glacier

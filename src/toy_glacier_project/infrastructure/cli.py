@@ -1,6 +1,6 @@
 import rich_click as click
 
-from toy_glacier_project.core import make_glacier
+from toy_glacier_project.core.glacier import make_glacier
 
 
 @click.group()
