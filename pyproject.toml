@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-toy-glacier-project = "toy_glacier_project.cli:main"
+toy-glacier-project = "toy_glacier_project.infrastructure.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.8.11,<0.9.0"]
